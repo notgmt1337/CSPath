@@ -1,8 +1,8 @@
 Welcome to CSPath's documentation!
 ==================================
 
-CSPath is a Python library designed for solving shortest-path problems. 
-CSPath depends solely on :code:`numpy` and :code:`pqdict`. The source code, which is licensed under GNU-GPL v3.0, is available at github.com/notgmt1337/cspath.
+CSPath is a Python library designed for solving shortest-path problems. The source code can be found at https://github.com/notgmt1337/CSPath.
+CSPath depends solely on `numpy <https://pypi.org/project/numpy/>` and `pqdict <https://pypi.org/project/pqdict/>`. 
 
 .. toctree::
    :maxdepth: 2
