@@ -1,2 +1,2 @@
-Tutorial: Finding the shortest path
-===================================
+Tutorial: Using CSPath
+======================
