@@ -1,4 +1,4 @@
-How To: Graph Parsing
+Parse A Graph
 =====================
 
 There are two ways we could parse a graph.
