@@ -10,7 +10,7 @@ This version of CSPath has multiple implementations for 4 different shortest-pat
   4. Floyd-Warshall Algorithm
  
 ## Documentation
-CSPath documentation is currently under-construction at https://cspath.readthedocs.io/en/latest/.
+Documentation for CSPath is available here: https://cspath.readthedocs.io/en/latest/.
 
 ## Dependencies
 CSPath has only two dependencies: NumPy and PQDict. More information about these projects can be found here:
