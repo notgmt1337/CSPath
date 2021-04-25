@@ -8,11 +8,7 @@ This version of CSPath has implementations for 4 different shortest-path-finding
   2. A* Algorithm
   3. Bellman-Ford Algorithm
   4. Floyd-Warshall Algorithm
-
-## Tutorial
-
-## How-To
-
+ 
 ## Documentation
 CSPath documentation is currently under-construction at https://cspath.readthedocs.io/en/latest/.
 
