@@ -1,7 +1,8 @@
 Welcome to CSPath's documentation!
 ==================================
 
-test
+CSPath is a Python library designed for solving shortest-path problems. 
+CSPath depends solely on :code:`numpy` and :code:`pqdict`.
 
 .. toctree::
    :maxdepth: 2
@@ -9,13 +10,4 @@ test
    tutorial/index.rst
    how-to/index.rst
    reference/index.rst
-   discussion/index.rst
 
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
