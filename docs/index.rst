@@ -13,4 +13,5 @@ CSPath depends solely on `numpy`_ and `pqdict`_.
    tutorial/index.rst
    how-to/index.rst
    reference/index.rst
+   explanation/index.rst
 
