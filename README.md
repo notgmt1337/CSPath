@@ -1,6 +1,6 @@
 # CSPath
 
-CSPath is a Python library for solving shortest-path problems. 
+CSPath is a Python library of Shortest-Path Algorithm implementations. 
 
 ## Version 1.0.0
 This version of CSPath has multiple implementations for 4 different shortest-path-finding algorithms:
