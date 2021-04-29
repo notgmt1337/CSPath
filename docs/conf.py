@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'CSPath'
-copyright = '2021, gmt1337'
-author = 'gmt1337'
+copyright = '2021, George Tridimas'
+author = 'George Tridimas'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0.0'
