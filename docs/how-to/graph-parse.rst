@@ -91,11 +91,36 @@ Adapted to this configuration, the distance function is defined as:
                                 
 , where :math:`e(a, b)` is the euclidean distance from node :math:`n_a` to node :math:`n_b`. 
 
-There is no need to explicitly define a distance matrix. The parsing would include three functions from the `Source`_.
+There is no need to explicitly define a distance matrix. The parsing mainly includes two functions from the `Source`_: :code:`cspath.Graph.addNode, cspath.Graph.linkNodes`. The only specifications for this type of parsing are that the start node must be defined first and the end node must be defined last. 
 
-For clarity, 
+For clarity, assume that the following graph is to be parsed:
 
 
+
+The code that parses this graph for use in CSPath is:
+
+.. code-block:: python
+
+    from cspath import Graph
+    
+    g = Graph()
+    
+    n0 = g.addNode(0, 0, 0)
+    n1 = g.addNode(-1, -1, 0)
+    n2 = g.addNode( 1, -1, 0)
+    n3 = g.addNode(-1.5, -2, 0)
+    n4 = g.addNode(-0.5, -2, 0)
+    n5 = g.addNode(0.5, -2, 0)
+    n6 = g.addNode(1.5, -2, 0)
+    
+    g.linkNodes(start, n1, False)
+    g.linkNodes(start, n2, False)
+    g.linkNodes(n1, n3, False)
+    g.linkNodes(n1, n4, False)
+    g.linkNodes(n2, n5, False)
+    g.linkNodes(n2, n6, False)
+    
+    
 
 
 
