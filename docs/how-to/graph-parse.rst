@@ -42,11 +42,12 @@ The first row of the distance matrix must always correspond to the start node an
 
 The distance matrix must be of the type :code:`numpy.array`. Let us consider the example graph below.
 
-The graph in distance matrix form according to the requirements of CSPath::
+The graph in distance matrix form according to the requirements of CSPath.
+
+
+Note that one could use :code:`-np.inf` instead of :code:`np.inf`, but it is better practice to use the latter.
 
 .. code-block:: python
-   :emphasize-lines: 3,5
-
    def some_function():
        interesting = False
        print 'This line is highlighted.'
@@ -54,8 +55,6 @@ The graph in distance matrix form according to the requirements of CSPath::
        print '...but this one is.
 
        
-
-Note that one could use :code:`-np.inf` instead of :code:`np.inf`, but it is better practice to use the latter.
 
 Method 2: Using Cartesian Coordinates
 -------------------------------------
