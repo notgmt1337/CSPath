@@ -40,6 +40,8 @@ The distance matrix is the square matrix with entries the values of the distance
 
 The distance matrix must always be of type :code:`numpy.array` and its first and last rows must always correspond to the start and end nodes, respectively.
 
+As an example, let us parse the following graph:
+
 
 The previous graph in the form of a distance matrix, adhering to CSPath's specification:
 
