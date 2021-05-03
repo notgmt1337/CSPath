@@ -42,8 +42,9 @@ The distance matrix must always be of type :code:`numpy.array` and its first and
 
 As an example, let us parse the following graph:
 
+.. image:: fi1.PNG
 
-The previous graph in the form of a distance matrix, adhering to CSPath's specification:
+The previous graph in the form of a distance matrix, adhering to CSPath's specifications:
 
 
 .. code-block:: python
