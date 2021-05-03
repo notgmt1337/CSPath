@@ -12,16 +12,6 @@ Method 1: Using a Distance Matrix
 
 We define the distance function as follows.
 
-.. math::
-    d_{a, b} = d(n_{a}, n_{b}) = 
-                                 \left\{
-                                        \begin{array}{ll}
-                                              w(a, b) & \mbox{if } n_{a} \perp n_{b} \\
-                                              +\infty & \mbox{if } n_{a} \parallel n_{b}
-                                        \end{array}
-                                 \right.
-                                    
-                                
 , where :math:`w(a, b)` is the weight of the edge connecting nodes :math:`n_{a}, n_{b}`.
 
 As a convention, :math:`n_{0}` is the start node and :math:`n_{m-1}` is the end node.
