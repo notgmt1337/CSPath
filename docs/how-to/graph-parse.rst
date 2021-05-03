@@ -51,9 +51,26 @@ The distance matrix is the square matrix with entries the values of the distance
 A consequence of the definition of the distance matrix and our notation is that :math:`d_{a, b} = d_{b, a}` is not necessarily true. This means that our distance matrix can describe any graph, be it directed or undirected.
 In code, the distance matrix must always be of type :code:`numpy.array` and the first and last rows must correspond to the start and end nodes, respectively. 
 
-To make things clearer, consider the graph below.
+To make things clearer, consider the graph below, which has both directed and undirected edges.
 
+.. image:: image_2021-05-03_173504.png
 
+The code that parses this graph for use in CSPath is:
+
+.. code-block:: python
+
+    import numpy as np
+    distance_matrix = np.array([[     0,       1,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf], 
+                                [     1,       0,     1.2,     1.3,     1.5,  np.inf,  np.inf,  np.inf],
+                                [np.inf,     1.2,       0,  np.inf,     0.3,     1.1,  np.inf,  np.inf], 
+                                [np.inf,     1.3,  np.inf,       0,     0.6,  np.inf,  np.inf,       2], 
+                                [np.inf,  np.inf,  np.inf,  np.inf,       0,     0.1,     1.0,     1.1], 
+                                [np.inf,  np.inf,     1.1,  np.inf,     0.1,       0,     0.5,  np.inf], 
+                                [np.inf,  np.inf,  np.inf,  np.inf,       1,     0.5,       0,     0.7], 
+                                [np.inf,  np.inf,  np.inf,  np.inf,     1.1,  np.inf,     0.7,       0],
+                              ])
+
+To denote :math:`n_{i} \parallel n_{j}` one could always use :math:`-np.inf` instead of :math:`np.inf`. For certain algorithms, one could replace :math:`np.inf` by any negative real number to denote :math:`n_{i} \parallel n_{j}`. Both of these practices are not encouraged, as it is best to just use :math:`np.inf`.
 
 Method 2: Using Cartesian Coordinates
 -------------------------------------
