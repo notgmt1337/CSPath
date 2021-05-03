@@ -23,14 +23,6 @@ We define the distance function as follows:
 As a convention, :math:`n_{0}` is the start node and :math:`n_{m-1}` is the end node.\\
 The distance matrix is the square matrix:
 
-.. math::
-    D =
-        \begin{pmatrix}
-              0 & d_{0, 1} & d_{0, 2} & ... & d_{0, m-2} & d_{0, m-1} \\
-              d_{1, 0} & 0 & d_{1, 2} & ... & d_{1, m-2} & d_{1, m-1} \\
-              ... \\
-              d_{m-1, 0} & d_{m-1, 1} & d_{m - 1, 2} & ... & d_{m-1, m-2} & 0
-        \end{pmatrix}
     
 Method 2: Using Cartesian Coordinates
 -------------------------------------
