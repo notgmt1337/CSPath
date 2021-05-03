@@ -91,7 +91,7 @@ Adapted to this configuration, the distance function is defined as:
                                 
 , where :math:`e(a, b)` is the euclidean distance from node :math:`n_a` to node :math:`n_b`. 
 
-There is no need to explicitly define a distance matrix. The parsing mainly includes two functions from the `Source`_: :code:`cspath.Graph.addNode, cspath.Graph.linkNodes`. The only specifications for this type of parsing are that the start node must be defined first and the end node must be defined last. 
+There is no need to explicitly define a distance matrix. The parsing mainly includes two functions from the `Source`_: :code:`cspath.Graph.addNode` and :code:`cspath.Graph.linkNodes`. The only specifications for this type of parsing are that the start node must be defined first and the end node must be defined last. 
 
 For clarity, assume that the following graph is to be parsed:
 
