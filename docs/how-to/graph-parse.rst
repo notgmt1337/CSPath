@@ -22,7 +22,7 @@ We define the distance function as follows:
     \right.
 , where :math:`w(a, b)` is the weight of the edge connecting nodes :math:`n_{a}, n_{b}`.
 
-As a convention, :math:`n_{0}` is the start node and :math:`n_{m-1}` is the end node.\\
+As a convention, :math:`n_{0}` is the start node and :math:`n_{m-1}` is the end node.
 The distance matrix is the square matrix:
 
 .. math::
