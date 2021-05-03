@@ -25,7 +25,7 @@ We define the distance function as follows.
 , where :math:`w(a, b)` is the weight of the edge connecting nodes :math:`n_{a}, n_{b}`.
 
 As a convention, :math:`n_{0}` is the start node and :math:`n_{m-1}` is the end node.
-The distance matrix is the square matrix:
+The distance matrix is the square matrix with entries the values of the distance function in the following manner:
 
 .. math::
     D =
@@ -38,23 +38,26 @@ The distance matrix is the square matrix:
               d_{m-1, 0} & d_{m-1, 1} & d_{m - 1, 2} & ...    & d_{m-1, m-2} & 0
         \end{pmatrix}
 
-The first row of the distance matrix must always correspond to the start node and the last row must always correspond to the end node.
-
-The distance matrix must be of the type :code:`numpy.array`. Let us consider the example graph below.
-
-The graph in distance matrix form according to the requirements of CSPath.
+The distance matrix must always be of type :code:`numpy.array` and its first and last rows must always correspond to the start and end nodes, respectively.
 
 
-Note that one could use :code:`-np.inf` instead of :code:`np.inf`, but it is better practice to use the latter.
+The previous graph in the form of a distance matrix, adhering to CSPath's specification:
+
 
 .. code-block:: python
-   def some_function():
-       interesting = False
-       print 'This line is highlighted.'
-       print 'This one is not...'
-       print '...but this one is.
 
-       
+   import numpy as np
+   distance_matrix = np.array([[     0,       1,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf], 
+                               [     1,       0,     1.2,     1.3,     1.5,  np.inf,  np.inf,  np.inf],
+                               [np.inf,     1.2,       0,  np.inf,     0.3,     1.1,  np.inf,  np.inf], 
+                               [np.inf,     1.3,  np.inf,       0,     0.6,  np.inf,  np.inf,       2], 
+                               [np.inf,     1.5,     0.3,     0.6,       0,     0.1,     1.0,     1.1], 
+                               [np.inf,  np.inf,     1.1,  np.inf,     0.1,       0,     0.5,  np.inf], 
+                               [np.inf,  np.inf,  np.inf,  np.inf,       1,     0.5,       0,  np.inf], 
+                               [np.inf,  np.inf,  np.inf,       2,     1.1,  np.inf,     0.7,       0],
+                             ])
+
+Note that one could use :code:`-np.inf` instead of :code:`np.inf`, but it is better practice to use the latter.
 
 Method 2: Using Cartesian Coordinates
 -------------------------------------
