@@ -12,7 +12,14 @@ Method 1: Using a Distance Matrix
 
 We define the distance function as follows::
 
-
+.. math::
+    d_{a, b} = d(n_{a}, n_{b}) = 
+                                    \left\{
+                                            \begin{array}{ll}
+                                                  w(a, b) & \mbox{if } n_{a} \perp n_{b} \\
+                                                  +\infty & \mbox{if } n_{a} \parallel n_{b}
+                                            \end{array}
+                                    \right.
                                     
                                 
 , where :math:`w(a, b)` is the weight of the edge connecting nodes :math:`n_{a}, n_{b}`.
@@ -38,16 +45,17 @@ In practice, the distance matrix must be of the type :code:`numpy.array`. Let us
 The graph in distance matrix form 
 
 .. code-block:: python
-    import numpy as np
-    distance_matrix = np.array([   [     0,       1,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf], 
-                                   [     1,       0,     1.2,     1.3,     1.5,  np.inf,  np.inf,  np.inf],
-                                   [np.inf,     1.2,       0,  np.inf,     0.3,     1.1,  np.inf,  np.inf], 
-                                   [np.inf,     1.3,  np.inf,       0,     0.6,  np.inf,  np.inf,       2], 
-                                   [np.inf,     1.5,     0.3,     0.6,       0,     0.1,     1.0,     1.1], 
-                                   [np.inf,  np.inf,     1.1,  np.inf,     0.1,       0,     0.5,  np.inf], 
-                                   [np.inf,  np.inf,  np.inf,  np.inf,       1,     0.5,       0,  np.inf], 
-                                   [np.inf,  np.inf,  np.inf,       2,     1.1,  np.inf,     0.7,       0],
-                              ])
+  
+  import numpy as np
+  distance_matrix = np.array([   [     0,       1,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf], 
+                                 [     1,       0,     1.2,     1.3,     1.5,  np.inf,  np.inf,  np.inf],
+                                 [np.inf,     1.2,       0,  np.inf,     0.3,     1.1,  np.inf,  np.inf], 
+                                 [np.inf,     1.3,  np.inf,       0,     0.6,  np.inf,  np.inf,       2], 
+                                 [np.inf,     1.5,     0.3,     0.6,       0,     0.1,     1.0,     1.1], 
+                                 [np.inf,  np.inf,     1.1,  np.inf,     0.1,       0,     0.5,  np.inf], 
+                                 [np.inf,  np.inf,  np.inf,  np.inf,       1,     0.5,       0,  np.inf], 
+                                 [np.inf,  np.inf,  np.inf,       2,     1.1,  np.inf,     0.7,       0],
+                            ])
 
 Do one that one could use :code:`-np.inf` instea of :code:`np.inf`, but it is better practice to use the latter.
 
