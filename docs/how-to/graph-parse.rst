@@ -91,7 +91,7 @@ Adapted to this configuration, the distance function is defined as:
                                 
 , where :math:`e(a, b)` is the euclidean distance from node :math:`n_a` to node :math:`n_b`. 
 
-There is no need to explicitly define a distance matrix. The parsing would include three functions from the :ref:`Source`.
+There is no need to explicitly define a distance matrix. The parsing would include three functions from the `Source`_.
 
 For clarity, 
 
@@ -100,5 +100,4 @@ For clarity,
 
 
 
-.. Source::
-    https://cspath.readthedocs.io/en/latest/reference/source.html
+.. _Source: https://cspath.readthedocs.io/en/latest/reference/source.html
