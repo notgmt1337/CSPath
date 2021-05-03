@@ -3,7 +3,7 @@ Parse A Graph
 
 Graph-parsing is essential to CSPath. Version 1.0.0 offers two methods of parsing graphs.
 
-Let :math:`m` denote the number of nodes in the graph. We introduce some notation that will help us encode the directedness of graphs.
+Let :math:`m` denote the number of nodes in the graph. Helpful notation is introduced:
 
 We use:
 
@@ -19,7 +19,7 @@ Note that:
 Method 1: Using a Distance Matrix
 ---------------------------------
 
-We define the distance function as follows.
+The distance function is defined as follows:
 
 .. math::
     d_{a, b} = d(n_{a}, n_{b}) = 
@@ -48,7 +48,7 @@ The distance matrix is the square matrix with entries the values of the distance
         \end{pmatrix}
         
        
-A consequence of the definition of the distance matrix and our notation is that :math:`d_{a, b} = d_{b, a}` is not necessarily true. This means that our distance matrix can describe any graph, be it directed or undirected.
+A consequence of the definition of the distance matrix and introduced notation is that :math:`d_{a, b} = d_{b, a}` is not necessarily true. This means that the distance matrix can describe any graph, be it directed or undirected.
 In code, the distance matrix must always be of type :code:`numpy.array` and the first and last rows must correspond to the start and end nodes, respectively. 
 
 To make things clearer, consider the graph below, which has both directed and undirected edges.
@@ -70,7 +70,7 @@ The code that parses this graph for use in CSPath is:
                                 [np.inf,  np.inf,  np.inf,  np.inf,     1.1,  np.inf,     0.7,       0],
                               ])
 
-To denote :math:`n_{i} \parallel n_{j}` one could always use :code:`-np.inf` instead of :code:`np.inf`. For certain algorithms, one could replace :code:`np.inf` by any negative real number. Both of these practices are not encouraged, as it is best to just use :code:`np.inf`.
+To denote :math:`n_{i} \parallel n_{j}`, one could always use :code:`-np.inf` instead of :code:`np.inf`. For certain algorithms, one could replace :code:`np.inf` by any negative real number. Both of these practices are not encouraged, as it is best to just use :code:`np.inf`.
 
 Method 2: Using Cartesian Coordinates
 -------------------------------------
