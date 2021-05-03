@@ -113,8 +113,8 @@ The code that parses this graph for use in CSPath is:
     n5 = g.addNode(0.5, -2, 0)
     n6 = g.addNode(1.5, -2, 0)
     
-    g.linkNodes(start, n1, False)
-    g.linkNodes(start, n2, False)
+    g.linkNodes(n0, n1, False)
+    g.linkNodes(n0, n2, False)
     g.linkNodes(n1, n3, True)
     g.linkNodes(n1, n4, True)
     g.linkNodes(n1, n5, True)
