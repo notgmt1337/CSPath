@@ -30,9 +30,9 @@ The distance matrix is the square matrix:
         \begin{pmatrix}
               0          & d_{0, 1}   & d_{0, 2}     & ...    & d_{0, m-2}   & d_{0, m-1} \\
               d_{1, 0}   & 0          & d_{1, 2}     & ...    & d_{1, m-2}   & d_{1, m-1} \\
+                         &            & \ddots       &        &              &            \\
                          &            &              & \ddots &              &            \\
                          &            &              &        & \ddots       &            \\
-                         &            &              &        &              & \ddots     \\
               d_{m-1, 0} & d_{m-1, 1} & d_{m - 1, 2} & ...    & d_{m-1, m-2} & 0
         \end{pmatrix}
     
