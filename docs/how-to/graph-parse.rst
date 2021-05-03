@@ -35,6 +35,14 @@ The distance matrix is the square matrix:
               d_{m-2, 0} & d_{m-2, 1} & d_{m-2, 2}   & ...    & 0            & d_{m-2, m-1} \\
               d_{m-1, 0} & d_{m-1, 1} & d_{m - 1, 2} & ...    & d_{m-1, m-2} & 0
         \end{pmatrix}
+
+The first row of the distance matrix must always correspond to the start node and the last row must always correspond to the end node.
+
+In practice, the distance matrix must be of the type :code:`numpy.array`. Let us consider the example graph below::
+
+The graph in distance matrix form for use within CSPath is::
+
+    
     
 Method 2: Using Cartesian Coordinates
 -------------------------------------
