@@ -13,6 +13,7 @@ We use the :code:`cspath.Graph.ipq_dijkstra` and :code:`cspath.Graph.bellman_for
 .. code-block:: python
 
     import numpy as np
+    from cspath import Graph
     distance_matrix = np.array([[     0,       1,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf], 
                                 [     1,       0,     1.2,     1.3,     1.5,  np.inf,  np.inf,  np.inf],
                                 [np.inf,     1.2,       0,  np.inf,     0.3,     1.1,  np.inf,  np.inf], 
