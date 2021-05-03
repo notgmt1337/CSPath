@@ -124,5 +124,7 @@ The code that parses this graph for use in CSPath is:
     g.linkNodes(n4, n5, False)
     g.linkNodes(n5, n6, False)
     
+ 
+It is important to note that :code:`False` and :code:`True` as the third argument of :code:`csgraph.Graph.linkNodes` determine whether the edge connecting the first argument :math:`n_{i}` to the second argument :math:`n_{j}` will be directed or not, respectively.
 
 .. _Source: https://cspath.readthedocs.io/en/latest/reference/source.html
