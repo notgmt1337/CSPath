@@ -113,16 +113,16 @@ The code that parses this graph for use in CSPath is:
     n5 = g.addNode(0.5, -2, 0)
     n6 = g.addNode(1.5, -2, 0)
     
-    g.linkNodes(n0, n1, False)
-    g.linkNodes(n0, n2, False)
-    g.linkNodes(n1, n3, True)
-    g.linkNodes(n1, n4, True)
-    g.linkNodes(n1, n5, True)
-    g.linkNodes(n2, n5, False)
-    g.linkNodes(n2, n6, True)
-    g.linkNodes(n3, n2, False)
-    g.linkNodes(n4, n5, False)
-    g.linkNodes(n5, n6, False)
+    g.linkNodes(0, 1, False)
+    g.linkNodes(0, 2, False)
+    g.linkNodes(1, 3, True)
+    g.linkNodes(1, 4, True)
+    g.linkNodes(1, 5, True)
+    g.linkNodes(2, 5, False)
+    g.linkNodes(2, 6, True)
+    g.linkNodes(3, 2, False)
+    g.linkNodes(4, 5, False)
+    g.linkNodes(5, 6, False)
     
  
 It is important to note that :code:`False` and :code:`True` as the third argument of :code:`csgraph.Graph.linkNodes` determine whether the edge connecting the first argument :math:`n_{i}` to the second argument :math:`n_{j}` will be directed or not, respectively.
