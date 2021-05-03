@@ -45,7 +45,6 @@ The distance matrix must be of the type :code:`numpy.array`. Let us consider the
 The graph in distance matrix form according to the requirements of CSPath::
 
 .. code-block:: python
-  
   import numpy as np
   distance_matrix = np.array([   [     0,       1,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf,  np.inf], 
                                  [     1,       0,     1.2,     1.3,     1.5,  np.inf,  np.inf,  np.inf],
