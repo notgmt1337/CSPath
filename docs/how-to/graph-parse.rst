@@ -70,7 +70,7 @@ The code that parses this graph for use in CSPath is:
                                 [np.inf,  np.inf,  np.inf,  np.inf,     1.1,  np.inf,     0.7,       0],
                               ])
 
-To denote :math:`n_{i} \parallel n_{j}` one could always use :math:`-np.inf` instead of :math:`np.inf`. For certain algorithms, one could replace :math:`np.inf` by any negative real number to denote :math:`n_{i} \parallel n_{j}`. Both of these practices are not encouraged, as it is best to just use :math:`np.inf`.
+To denote :math:`n_{i} \parallel n_{j}` one could always use :code:`-np.inf` instead of :code:`np.inf`. For certain algorithms, one could replace :code:`np.inf` by any negative real number. Both of these practices are not encouraged, as it is best to just use :code:`np.inf`.
 
 Method 2: Using Cartesian Coordinates
 -------------------------------------
