@@ -40,7 +40,7 @@ The distance matrix is the square matrix:
 
 The first row of the distance matrix must always correspond to the start node and the last row must always correspond to the end node.
 
-In practice, the distance matrix must be of the type :code:`numpy.array`. Let us consider the example graph below.
+The distance matrix must be of the type :code:`numpy.array`. Let us consider the example graph below.
 
 The graph in distance matrix form according to the requirements of CSPath::
 
@@ -57,7 +57,7 @@ The graph in distance matrix form according to the requirements of CSPath::
                                  [np.inf,  np.inf,  np.inf,       2,     1.1,  np.inf,     0.7,       0],
                             ])
 
-Do one that one could use :code:`-np.inf` instea of :code:`np.inf`, but it is better practice to use the latter.
+Note that one could use :code:`-np.inf` instead of :code:`np.inf`, but it is better practice to use the latter.
 
 Method 2: Using Cartesian Coordinates
 -------------------------------------
