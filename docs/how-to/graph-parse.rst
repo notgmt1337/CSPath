@@ -16,7 +16,7 @@ Note that:
 2. :math:`n_{1} \perp n_{2}` does not imply :math:`n_{2} \perp n_{1}`, as the edge connecting the two could be directed from :math:`n_{1}` to :math:`n_{2}`.
 
 
-Method 2: Using a Distance Matrix
+Method 1: Using a Distance Matrix
 ---------------------------------
 
 We define the distance function as follows.
