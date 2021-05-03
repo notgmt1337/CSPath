@@ -95,7 +95,7 @@ There is no need to explicitly define a distance matrix. The parsing mainly incl
 
 For clarity, assume that the following graph is to be parsed:
 
-
+.. image:: image_2021-05-03_185232.png
 
 The code that parses this graph for use in CSPath is:
 
@@ -115,14 +115,14 @@ The code that parses this graph for use in CSPath is:
     
     g.linkNodes(start, n1, False)
     g.linkNodes(start, n2, False)
-    g.linkNodes(n1, n3, False)
-    g.linkNodes(n1, n4, False)
+    g.linkNodes(n1, n3, True)
+    g.linkNodes(n1, n4, True)
+    g.linkNodes(n1, n5, True)
     g.linkNodes(n2, n5, False)
-    g.linkNodes(n2, n6, False)
+    g.linkNodes(n2, n6, True)
+    g.linkNodes(n3, n2, False)
+    g.linkNodes(n4, n5, False)
+    g.linkNodes(n5, n6, False)
     
-    
-
-
-
 
 .. _Source: https://cspath.readthedocs.io/en/latest/reference/source.html
