@@ -31,7 +31,7 @@ We define the distance function as follows.
                                  \right.
                                     
                                 
-, where :math:`w(a, b)` is the weight of the edge connecting nodes :math:`n_{a}, n_{b}`.
+, where :math:`w(a, b)` is the weight of the edge connecting nodes :math:`n_{a}, n_{b}`.  
 
 As a convention, :math:`n_{0}` is the start node and :math:`n_{m-1}` is the end node.
 The distance matrix is the square matrix with entries the values of the distance function in the following manner:
@@ -46,6 +46,13 @@ The distance matrix is the square matrix with entries the values of the distance
               d_{m-2, 0} & d_{m-2, 1} & d_{m-2, 2}   & ...    & 0            & d_{m-2, m-1} \\
               d_{m-1, 0} & d_{m-1, 1} & d_{m - 1, 2} & ...    & d_{m-1, m-2} & 0
         \end{pmatrix}
+        
+       
+A consequence of the definition of the distance matrix and our notation is that :math:`d_{a, b} = d_{b, a}` is not necessarily true. This means that our distance matrix can describe any graph, be it directed or undirected.
+In code, the distance matrix must always be of type :code:`numpy.array` and the first and last rows must correspond to the start and end nodes, respectively. 
+
+To make things clearer, consider the graph below.
+
 
 
 Method 2: Using Cartesian Coordinates
