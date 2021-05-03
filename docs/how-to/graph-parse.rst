@@ -75,4 +75,22 @@ To denote :math:`n_{i} \parallel n_{j}`, one could always use :code:`-np.inf` in
 Method 2: Using Cartesian Coordinates
 -------------------------------------
 
-Using Cartesian coordinates
+If the nodes in the graph to be parsed are described via cartesian coordinates, CSPath offers functionality to do precisely that. Let us introduce some more notation: :math:`n_a = (x_a, y_a, z_a)` denotes node :math:`n_{a}` with coordinates :math:`(x_a, y_a, z_a)`. 
+
+Adapted to this configuration, the distance function is defined as:
+
+.. math::
+    d_{a, b} = d(n_{a}, n_{b}) = 
+                                 \left\{
+                                        \begin{array}{ll}
+                                              e(a, b) & \mbox{if } n_{a} \perp n_{b} \\
+                                              +\infty & \mbox{if } n_{a} \parallel n_{b}
+                                        \end{array}
+                                 \right.
+                                    
+                                
+, where :math:`e(a, b)` is the euclidean distance from node :math:`n_a` to node :math:`n_b`. 
+
+There is no need to explicitly define a distance matrix. The parsing would include three functions from the :ref:`Reference/Source Code`.
+        
+For clarity, 
