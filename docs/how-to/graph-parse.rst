@@ -6,16 +6,17 @@ Graph-parsing is essential to CSPath. Version 1.0.0 offers two methods of parsin
 Method 1: Using a Distance Matrix
 ---------------------------------
 
-Let :math:`n` denote the number of nodes in the graph. The notation :math:`n_{1} \parallel n_{2}` means that node :math:`n_{1}` does not share an edge with node :math:`n_{2}` and the notation :math:`n_{1} \perp n_{2}` means that node :math:`n_{1}` shares an edge with node :math:`n_{2}`. We define the distance function as follows:
+Let :math:`n` denote the number of nodes in the graph.\\The notation :math:`n_{1} \parallel n_{2}` means that node :math:`n_{1}` does not share an edge with node :math:`n_{2}`.\\On the contrary, the notation :math:`n_{1} \perp n_{2}` means that node :math:`n_{1}` shares an edge with node :math:`n_{2}`.\\We define the distance function as follows:
 
 .. math::
-    d_{a, b} = d_{n_{a}, n_{b}} = 
+    d_{a, b} = d(n_{a}, n_{b}) = 
     \left\{
             \begin{array}{ll}
-                  w(a, b), if n_{a} \perp n_{b} \\
-                  +\infty, if n_{a} \parallel n_{b}
+                  w(a, b), \mbox{if } n_{a} \perp n_{b} \\
+                  +\infty, \mbox{if } n_{a} \parallel n_{b}
             \end{array}
     \right.
+, where :math:`w(a, b)` is the weight of the edge connecting nodes :math:`n_{a}, n_{b}`.
 
 
 Method 2: Using Cartesian Coordinates
