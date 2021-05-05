@@ -7,7 +7,7 @@ Shortest-path problems are ubiquitous. An alarming number of the world's softwar
 
 This is basically what is called a "shortest-path problem". The keyword "shortest" need not refer to distance, but rather to the universal idea of cost. This interpretation is what abstractifies shortest-path algorithms and makes things such as friend-suggestions in Facebook possible.
 
-To formally introduce what a shortest-path problem is, we need to define some measures that rely heavily on graph theory terminology. If your graph theory is a bit rusty, please visit the `Bibliography`_ section.
+To formally introduce what a shortest-path problem is, we need to define some measures that rely heavily on graph theory terminology. If your graph theory is a bit rusty, please visit the `bibliography`_ section.
 
 Installing CSPath
 ----------------------
@@ -19,4 +19,4 @@ Example Code
 This is some example code for the tutorial
 
 
-.. _`Bibliograph`: https://cspath.readthedocs.io/en/latest/reference/bibliography.html
+.. _bibliograph: https://cspath.readthedocs.io/en/latest/reference/bibliography.html
