@@ -9,6 +9,8 @@ This is basically what is called a "shortest-path problem". The keyword "shortes
 
 Let :math:`G` be an edge-weighted graph and let :math:`S, E` be two nodes in :math:`G`. We need to find the path :math:`P` from :math:`S` to :math:`E` such that the weight-sum of the edges in :math:`P` is minimal. For small enough graphs, this isn't that much of a chore. However, it is virtually impossible to do this by hand for a graph corresponding to a city like London or New York. Thus, the solution is to develop algorithms that solve such problems and implement them for use within computer programs. 
 
+Going back to the example above, you remember that there is a very handy app installed on your smartphone called `Google-Maps`_. You press on the 'Directions' button and input your hotel's address and 'Eiffel Tower, Paris, France' as your destination. And voilà, you have found the shortest-path
+
 
 Installing CSPath
 ----------------------
@@ -21,3 +23,4 @@ This is some example code for the tutorial
 
 
 .. _bibliography: https://cspath.readthedocs.io/en/latest/reference/bibliography.html
+.. _Google-Maps: https://www.google.com/maps
