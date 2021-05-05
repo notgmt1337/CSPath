@@ -17,3 +17,6 @@ Example Code
 ------------
 
 This is some example code for the tutorial
+
+
+.. _`Bibliograph`: https://cspath.readthedocs.io/en/latest/reference/bibliography.html
