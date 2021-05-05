@@ -4,10 +4,10 @@ Source Code
 
 
 
-Dijkstra's Algorhtm
+Graph Module
 --------------------
 
-.. automodule:: cspath.Graph.dijkstra
+.. automodule:: cspath.Graph
     :members:
     :undoc-members:
     :show-inheritance:
