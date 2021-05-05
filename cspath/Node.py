@@ -1,17 +1,27 @@
+"""A class for a nodes"""
 import numpy as np
-
 ###############################
 #           NODE CLASS        #
 ###############################
 
 class Node:
-    
+    """
+    A class for nodes.
+
+    Parameters
+    ----------
+
+        - x, y, z: Cartesian Coordinates of Nodes
+
+    """ 
     def __init__(self, x, y, z):
 
         self.__vec = np.array([np.float64(x), np.float64(y), np.float64(z)])
 
     def get(self):
-
+        """
+        Returns the node coodinates in the form of :code:`numpy.array`. 
+        """ 
         return self.__vec
     
     def setX(self, x):
