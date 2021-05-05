@@ -1,4 +1,4 @@
-"""A class for a nodes"""
+"""A class for a nodes."""
 import numpy as np
 ###############################
 #           NODE CLASS        #
@@ -6,22 +6,31 @@ import numpy as np
 
 class Node:
     """
-    A class for nodes.
-
+    Return a strategy vector from a tableau
     Parameters
     ----------
-
-        - x, y, z: Cartesian Coordinates of Nodes
-
-    """ 
+        tableau: a numpy array
+        basic_labels: a set
+        strategy_labels: a set
+    Returns
+    -------
+        strategy: a numpy array
+    """
     def __init__(self, x, y, z):
-
         self.__vec = np.array([np.float64(x), np.float64(y), np.float64(z)])
 
     def get(self):
         """
-        Returns the node coodinates in the form of :code:`numpy.array`. 
-        """ 
+        Return a strategy vector from a tableau
+        Parameters
+        ----------
+            tableau: a numpy array
+            basic_labels: a set
+            strategy_labels: a set
+        Returns
+        -------
+            strategy: a numpy array
+        """
         return self.__vec
     
     def setX(self, x):
