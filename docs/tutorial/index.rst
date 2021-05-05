@@ -19,4 +19,4 @@ Example Code
 This is some example code for the tutorial
 
 
-.. _bibliograph: https://cspath.readthedocs.io/en/latest/reference/bibliography.html
+.. _bibliography: https://cspath.readthedocs.io/en/latest/reference/bibliography.html
