@@ -1,7 +1,7 @@
 Bibliography
 ============
 
-.. [West-2001] West, Douglas Brent. "Graph Theory: Introductio to, Second Edition". Prentice Hall, 2001.
+.. [West-2001] West, Douglas Brent. "Graph Theory: Introduction to, Second Edition". Prentice Hall, 2001.
 .. [Oliphant-NoDate] Oliphant, Travis. "NumPy: A guide to NumPy". Retrieved from https://numpy.org
 .. [NoName-2020] N.N. (2020). "Priority Queue Dictionary". GitHub repository. GitHub. Retrieved from https://github.com/nvictus/priority-queue-dictionary.
 .. [Su-NoDate] Su, Jessica. "Amortized Analysis". University of Stanford. Retrieved from https://web.stanford.edu/class/archive/cs/cs161/cs161.1168/lecture14.pdf.
