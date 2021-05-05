@@ -5,32 +5,10 @@ import numpy as np
 ###############################
 
 class Node:
-    """
-    Return a strategy vector from a tableau
-    Parameters
-    ----------
-        tableau: a numpy array
-        basic_labels: a set
-        strategy_labels: a set
-    Returns
-    -------
-        strategy: a numpy array
-    """
     def __init__(self, x, y, z):
         self.__vec = np.array([np.float64(x), np.float64(y), np.float64(z)])
 
     def get(self):
-        """
-        Return a strategy vector from a tableau
-        Parameters
-        ----------
-            tableau: a numpy array
-            basic_labels: a set
-            strategy_labels: a set
-        Returns
-        -------
-            strategy: a numpy array
-        """
         return self.__vec
     
     def setX(self, x):
