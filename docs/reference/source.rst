@@ -7,7 +7,7 @@ Source Code
 Graph Module
 --------------------
 
-.. automodule:: cspath.Graph
+.. automodule:: cspath.Node
     :members:
     :undoc-members:
     :show-inheritance:
