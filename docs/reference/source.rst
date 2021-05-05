@@ -4,10 +4,10 @@ Source Code
 
 
 
-Graph Module
+cspath\.Node
 --------------------
 
-.. automodule:: cspath.Node.Node
+.. automodule:: cspath.Node
     :members:
     :undoc-members:
     :show-inheritance:
