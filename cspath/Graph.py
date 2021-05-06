@@ -937,6 +937,19 @@ class Graph:
 ####### Get Out Degree of Node. If negIntr is set to True, we consider
 ####### negative values of the distance matrix as neighbors with negative weight.
     def get_odegree(self, node, negIntr = False):
+        """
+         Get Out Degree of Node. If negIntr is set to True, we consider
+         negative real values of the distance matrix as neighbors with negative weight.
+         
+         Parameters
+         ----------
+            node: int
+            negIntr: boolean, optional
+        
+        Returns
+        -------
+            deg: int
+        """
         deg = 0
         for i in np.arange(len(self.__distMatrix)):
             if self.__distMatrix[node][i] > 0:
@@ -949,7 +962,19 @@ class Graph:
 ####### Get In Degree of Node. If negIntr is set to True, we consider
 ####### negative values of the distance matrix as neighbors with negative weight.
     def get_idegree(self, node, negIntr = False):
-
+         """
+         Get In Degree of Node. If negIntr is set to True, we consider
+         negative real values of the distance matrix as neighbors with negative weight.
+         
+         Parameters
+         ----------
+            node: int
+            negIntr: boolean, optional
+        
+        Returns
+        -------
+            deg: int
+        """
         deg = 0
         for i in np.arange(len(self.__distMatrix)):
             if self.__distMatrix[i][node] > 0:
@@ -961,8 +986,21 @@ class Graph:
 
 ####### Get In Neighbors of Node. If negIntr is set to True, we consider
 ####### negative values of the distance matrix as neighbors with negative weight.
-    def get_oneighbors(self, node, negIntr = False):
+    def get_ineighbors(self, node, negIntr = False):
+        """
+        Get In Neighbors of Node. If negIntr is set to True, we consider
+        negative real values of the distance matrix as neighbors with negative weight.
         
+        Parameters
+        ----------
+            node: int
+            negIntr = boolean, optional
+        
+        Returns
+        -------
+            oneighs: numpy.array of indices of in neighbors
+        
+        """
         oneighs = np.array([], dtype = np.uint64)
 
         for i in np.arange(len(self.__distMatrix)):
@@ -976,8 +1014,21 @@ class Graph:
     
 ####### Get Out Neighbors of Node. If negIntr is set to True, we consider
 ####### negative values of the distance matrix as neighbors with negative weight.
-    def get_ineighbors(self, node, negIntr = False):
-
+    def get_oneighbors(self, node, negIntr = False):
+        """
+        Get Out Neighbors of Node. If negIntr is set to True, we consider
+        negative real values of the distance matrix as neighbors with negative weight.
+        
+        Parameters
+        ----------
+            node: int
+            negIntr = boolean, optional
+        
+        Returns
+        -------
+            oneighs: numpy.array of indices of out neighbors
+        
+        """
         oneighs = np.array([], dtype = np.uint64)
 
         for i in np.arange(len(self.__distMatrix)):
