@@ -15,6 +15,7 @@ class Graph:
     
     Parameters
     ----------
+    
         distanceMatrix: numpy.array, optional
     
     If no distanceMatrix is given or the distanceMatrix given is invalid, 
@@ -44,6 +45,7 @@ class Graph:
         
         Parameters
         ----------
+        
             distanceMatrix: numpy.array
             errorMode: boolean, optional
         
@@ -94,19 +96,39 @@ class Graph:
 ######################################
 
     def getCoordinateMode(self):
+        """
+        Returns :code:`True` if coordinates are used for graph parsing. :code:`False`, otherwise.
+        """
         return self.__coordinateMode
     
     def get3DMode(self):
+        """
+        If coordinates are used for graph parsing, return true if the graph is 3-dimensional. False if not.
+        Otherwise, return None
+        """
         if self.__coordinateMode:
             return self.__3D
         return None
 
 ####### Distance Matrix getter, setter and checker.
     def IsValidDistanceMatrix(self, distanceMatrix, errorMode = False):
+        """
+        Essentially the same with checkDistanceMatrix, only errorMode = False by default
+        """
         return self.checkDistanceMatrix(distanceMatrix, errorMode)
     
     def setDistanceMatrix(self, distanceMatrix, errorMode = False):
-
+        """
+        Uses checkDistanceMatrix to see if the given distanceMatrix is valid. If so, it sets the 
+        current distanceMatrix to the given. Otherwise returns False
+        
+        Parameters
+        ----------
+        
+            distanceMatrix: numpy.array
+            errorMode: boolean, optional
+        
+        """
         if self.checkDistanceMatrix(distanceMatrix, errorMode):
             self.__distMatrix = distanceMatrix
             return True
@@ -114,11 +136,35 @@ class Graph:
             return False
 
     def getDistanceMatrix(self):
+        """
+        Returns current distanceMatrix
+        
+        Returns
+        -------
+        
+            distanceMatrix: numpy.array
+        """
         return self.__distMatrix
 
 ####### Add a node to the Node list. Update distance matrix.
     def addNode(self, x, y, z):
-
+        """
+        If we are in coordinate mode, checks if the node with given coordinates is in nodeList. If not, it adds it.
+        Otherwise, returns False
+        
+        Parameters
+        ----------
+        
+            x: float or int
+            y: float or int
+            z: float or int
+        
+        Returns
+        -------
+        
+            curr: cspath.Node
+  
+        """
         if self.__coordinateMode:
 
             nx = np.float64(x)
@@ -150,7 +196,17 @@ class Graph:
     
 ####### Change the coordinates of an existing node.
     def changeNode(self, i, x, y, z):
+        """
+        Changes node i's coordinates to x, y, z after checking no node with x, y, z coordinates exists in the nodeList
         
+        Parameters
+        ----------
+        
+            i: int, index of Node in the list
+            x: float or int
+            y: float or int
+            z: float or int
+        """
         if self.__coordinateMode:
 
             ni = np.uint64(i)
@@ -171,6 +227,15 @@ class Graph:
 
 ####### Return the list of current nodes.
     def getNodeList(self):
+        """
+        Returns the nodeList
+        
+        Returns
+        -------
+            
+            cspath.Graph.__NodeList: numpy.array of cspath.Node types
+        
+        """
         return self.__NodeList
 
 ######################################
@@ -179,7 +244,17 @@ class Graph:
 
 ####### Create a link between two specified nodes.
     def linkNodes(self, i, j, sdirect):
-
+        """
+        Adds an edge between two nodes. If sdirect is set to True, it is undirected. Otherwise, it is directed from 
+        node i to node j. The weight of the edge is the euclidean distance between the two nodes
+        
+        Parameters
+        ----------
+        
+            i: int
+            j: int
+            sdirect: boolean
+        """
         ni = np.uint64(i)
         nj = np.uint64(j)
 
@@ -192,7 +267,17 @@ class Graph:
     
 ####### Delete a link between two specified nodes.
     def delLink(self, i, j, sdirect):
-
+        """
+        Removes an edge between two nodes. If sdirect is set to True, the edge is removed completely. If False and the edge
+        is undirected, what remains is only a directed edge from node i to node j.
+        
+        Parameters
+        ----------
+            i: int
+            j: int
+            sdirect: boolean
+        
+        """
         ni = np.uint64(i)
         nj = np.uint64(j)
 
@@ -208,7 +293,17 @@ class Graph:
 
 ####### Dijkstra's Algorithm Implementation Version 1 (Without using heaps).
     def dijkstra(self):
-                
+        """
+        Standard implementation of Dijkstra's algorithm. More information can be found `here`_.
+        
+        Returns
+        -------
+            tour: numpy.array containing shortest path
+            shrDist: float or int, length of tour
+            duration: float or int, algorithm runtime in seconds
+        
+        .. _here: https://cspath.readthedocs.io/en/latest/explanation/index.html
+        """
         start = time()
 
         numNodes = len(self.__distMatrix)
@@ -287,7 +382,17 @@ class Graph:
 
 ####### Dijkstra's Algorithm Implementation Version 2 (Making use of an indexed priority queue).
     def ipq_dijkstra(self):
+        """
+        Indexed Priority Queue implementation of Dijkstra's algorithm. More information can be found `here`_.
         
+        Returns
+        -------
+            tour: numpy.array containing shortest path
+            shrDist: float or int, length of tour
+            duration: float or int, algorithm runtime in seconds
+        
+        .. _here: https://cspath.readthedocs.io/en/latest/explanation/index.html
+        """
         try:
             from pqdict import pqdict
 
@@ -361,7 +466,20 @@ class Graph:
 ####### Dijkstra's Algorithm Implementation Version 3 (Returns shortest distances from start node to all other nodes and previous vertices without heaps).
 
     def dijkstra_all(self):
-                
+        """
+        Standard implementation of Dijkstra's algorithm with extra outputs. More information can be found `here`_.
+        
+        Returns
+        -------
+            shr: numpy.array containing shortest distances to all nodes from start node
+            tour: numpy.array containing shortest path
+            prev: numpy.array containing previously visited nodes
+            shrDist: float or int, length of tour
+            duration: float or int, algorithm runtime in seconds
+        
+        
+        .. _here: https://cspath.readthedocs.io/en/latest/explanation/index.html
+        """        
         start = time()
 
         numNodes = len(self.__distMatrix)
@@ -440,6 +558,20 @@ class Graph:
 
 ####### Dijkstra's Algorithm Implementation Version 4 (Returns shortest distances from start node to all other nodes and previous vertices using an indexed priority queue).
     def ipq_dijkstra_all(self):
+        """
+        Indexed Priority Queue implementation of Dijkstra's algorithm with extra outputs. More information can be found `here`_.
+        
+        Returns
+        -------
+            shr: numpy.array containing shortest distances to all nodes from start node
+            tour: numpy.array containing shortest path
+            prev: numpy.array containing previously visited nodes
+            shrDist: float or int, length of tour
+            duration: float or int, algorithm runtime in seconds
+        
+        
+        .. _here: https://cspath.readthedocs.io/en/latest/explanation/index.html
+        """       
 
         try:
             from pqdict import pqdict
@@ -513,7 +645,17 @@ class Graph:
 
 ####### A* Algorithm Implementation.
     def a_star(self):
+        """
+        Standard implementation of A* Algorithm. More information can be found `here`_.
         
+        Returns
+        -------
+            tour: numpy.array containing shortest path
+            shrDist: float or int, length of tour
+            duration: float or int, algorithm runtime in seconds
+        
+        .. _here: https://cspath.readthedocs.io/en/latest/explanation/index.html
+        """
         if not self.__coordinateMode:
             return self.dijkstra()
         
@@ -595,7 +737,17 @@ class Graph:
 
 ####### Bellman-Ford Algorithm Implementation.
     def bellman_ford(self):
-
+        """
+        Standard implementation of Bellman-Ford algorithm. More information can be found `here`_.
+        
+        Returns
+        -------
+            tour: numpy.array containing shortest path
+            shrDist: float or int, length of tour
+            duration: float or int, algorithm runtime in seconds
+        
+        .. _here: https://cspath.readthedocs.io/en/latest/explanation/index.html
+        """
         numNodes = len(self.__distMatrix)
 
         if numNodes == 0:
@@ -649,7 +801,20 @@ class Graph:
         return tour, shr[numNodes - 1], end - start
 
     def bellman_ford_all(self):
-
+        """
+        Standard implementation of Bellman-Ford with extra outputs. More information can be found `here`_.
+        
+        Returns
+        -------
+            shr: numpy.array containing shortest distances to all nodes from start node
+            tour: numpy.array containing shortest path
+            prev: numpy.array containing previously visited nodes
+            shrDist: float or int, length of tour
+            duration: float or int, algorithm runtime in seconds
+        
+        
+        .. _here: https://cspath.readthedocs.io/en/latest/explanation/index.html
+        """   
         numNodes = len(self.__distMatrix)
 
         if numNodes == 0:
@@ -704,7 +869,18 @@ class Graph:
 
 ####### Floyd-Warshall Algorithm Implementation.
     def floyd_warshall(self):
-
+        """
+        Standard implementation of Floyd-Warshall. More information can be found `here`_.
+        
+        Returns
+        -------
+            tour: numpy.array containing shortest path
+            shrDist: float or int, length of tour
+            duration: float or int, algorithm runtime in seconds
+        
+        
+        .. _here: https://cspath.readthedocs.io/en/latest/explanation/index.html
+        """   
         numNodes = len(self.__distMatrix)
 
         if numNodes == 0:
@@ -761,7 +937,6 @@ class Graph:
 ####### Get Out Degree of Node. If negIntr is set to True, we consider
 ####### negative values of the distance matrix as neighbors with negative weight.
     def get_odegree(self, node, negIntr = False):
-
         deg = 0
         for i in np.arange(len(self.__distMatrix)):
             if self.__distMatrix[node][i] > 0:
