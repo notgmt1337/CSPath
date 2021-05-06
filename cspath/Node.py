@@ -7,6 +7,14 @@ import numpy as np
 class Node:
     """
     A class for handling Nodes described by 3D Cartesian Coordinates
+    Initializes instance of Node class with coordinates x, y, z
+        
+    Parameters
+    ----------
+        
+        x: float or int
+        y: float or int
+        z: float or int
     """
     def __init__(self, x, y, z):
         """
