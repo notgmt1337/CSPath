@@ -7,7 +7,7 @@ import numpy as np
 class Node:
     """
     A class for handling Nodes described by 3D Cartesian Coordinates
-    Initializes instance of Node class with coordinates x, y, z
+    Initializes instance of :code:`cspath.Node` with coordinates x, y, z
         
     Parameters
     ----------
@@ -17,16 +17,6 @@ class Node:
         z: float or int
     """
     def __init__(self, x, y, z):
-        """
-        Initializes instance of Node class with coordinates x, y, z
-        
-        Parameters
-        ----------
-        
-            x: float or int
-            y: float or int
-            z: float or int
-        """
         self.__vec = np.array([np.float64(x), np.float64(y), np.float64(z)])
 
     def get(self):
