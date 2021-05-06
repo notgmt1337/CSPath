@@ -97,6 +97,8 @@ def nodeEq(Node1, Node2):
     
         Node1: cspath.Node
         Node2: cspath.Node
+    
+    Returns True if yes, False otherwise.
     """
     a = Node1.get()
     b = Node2.get()
@@ -114,6 +116,8 @@ def nodeInList(Node1, nodeList):
     
         Node1: cspath.Node
         nodeList: numpy.array of cspath.Node instances
+     
+    Returns True if yes, False otherwise.
     """
     for i in np.arange(len(nodeList)):
 
