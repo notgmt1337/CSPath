@@ -1,3 +1,4 @@
+"""Graph class for CSPath"""
 #########################
 #       IMPORTS         #
 #########################
@@ -9,7 +10,16 @@ from . import Node as nd
 ######################################
 
 class Graph:
-
+    """
+    Initializes instance of the cspath.Graph class
+    
+    Parameters
+    ----------
+        distanceMatrix: numpy.array, optional
+    
+    If no distanceMatrix is given or the distanceMatrix given is invalid, 
+    the distanceMatrix of the class will not be initialized
+    """
     def __init__(self, distanceMatrix = None):
 
         self.__distMatrix = np.array([], dtype = np.ndarray)
@@ -29,7 +39,17 @@ class Graph:
 ####### Check if given distance matrix is a valid distance Matrix. Depending on 
 ####### errorMode, choose to either raise an error or return false. 
     def checkDistanceMatrix(self, distanceMatrix, errorMode = True):
-
+        """
+        Checks whether the given distance matrix is a valid distance matrix
+        
+        Parameters
+        ----------
+            distanceMatrix: numpy.array
+            errorMode: boolean, optional
+        
+        If errorMode is set to True, then errors will be raised, ending code execution
+        Otherwise, the function will return False
+        """
         if not isinstance(distanceMatrix[0], np.ndarray):
             if errorMode:
                 raise ValueError(f"Expected {np.ndarray} and got {type(distanceMatrix[0])}.")
