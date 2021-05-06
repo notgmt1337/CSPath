@@ -13,7 +13,7 @@ class Node:
 
     def get(self):
         """
-        Get Node in the from of :code:`numpy.array`
+        Get coordinates of Node as :code:`numpy.array`
         
         Returns
         -------
@@ -29,7 +29,7 @@ class Node:
         Parameters
         ----------
         
-            x: float or integer
+            x: float or int
         """
         nx = np.float64(x)
         self.__vec[0] = nx
@@ -41,7 +41,7 @@ class Node:
         Parameters
         ----------
         
-            y: float or integer
+            y: float or int
         """
         ny = np.float64(y)
         self.__vec[1] = ny
@@ -53,7 +53,7 @@ class Node:
         Parameters
         ----------
         
-            z: float or integer
+            z: float or int
         """
         nz = np.float64(z)
         self.__vec[2] = nz
@@ -65,9 +65,9 @@ class Node:
         Parameters
         ----------
         
-            x: float or integer
-            y: float or integer
-            z: float or integer
+            x: float or int
+            y: float or int
+            z: float or int
         """
         self.setX(x)
         self.setY(y)
@@ -82,19 +82,17 @@ class Node:
 
 def nodeEq(Node1, Node2):
     """
-    Check if two instances of the Node class have equal coordinates
-    Returns True if yes, False otherwise
+    Check if two instances of the Node class have the same coordinates
     
     Parameters
     ----------
     
         Node1: cspath.Node
-        Node1: cspath.Node
+        Node2: cspath.Node
     
     Returns
     -------
-    
-        Boolean
+        True/False
     """
     a = Node1.get()
     b = Node2.get()
@@ -105,7 +103,7 @@ def nodeEq(Node1, Node2):
 
 def nodeInList(Node1, nodeList):
     """
-    Check if one instance of the Node class is in the cspath.Graph.nodeList
+    Check if one instance of the Node class is in a nodeList
     
     Parameters
     ----------
@@ -115,8 +113,8 @@ def nodeInList(Node1, nodeList):
         
     Returns
     -------
-        
-        Boolean
+    
+        True/False
     
     """
     for i in np.arange(len(nodeList)):
