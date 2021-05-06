@@ -5,10 +5,16 @@ import numpy as np
 ###############################
 
 class Node:
+    """
+    A class for storing Node types.
+    """
     def __init__(self, x, y, z):
         self.__vec = np.array([np.float64(x), np.float64(y), np.float64(z)])
 
     def get(self):
+        """
+        Returns: Node in :code:`numpy.array` form.
+        """
         return self.__vec
     
     def setX(self, x):
