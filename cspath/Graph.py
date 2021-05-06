@@ -40,7 +40,7 @@ class Graph:
 ####### errorMode, choose to either raise an error or return false. 
     def checkDistanceMatrix(self, distanceMatrix, errorMode = True):
         """
-        Checks whether the given distance matrix is a valid distance matrix
+        Checks whether the given distance matrix is a `valid`_ distance matrix
         
         Parameters
         ----------
@@ -49,6 +49,9 @@ class Graph:
         
         If errorMode is set to True, then errors will be raised, ending code execution
         Otherwise, the function will return False
+        
+        .. _valid: https://cspath.readthedocs.io/en/latest/how-to/graph-parse.html
+        
         """
         if not isinstance(distanceMatrix[0], np.ndarray):
             if errorMode:
