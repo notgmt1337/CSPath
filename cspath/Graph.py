@@ -11,7 +11,7 @@ from . import Node as nd
 
 class Graph:
     """
-    Initializes instance of the cspath.Graph class
+    Initializes instance of the :code:`cspath.Graph` class
     
     Parameters
     ----------
