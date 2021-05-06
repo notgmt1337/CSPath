@@ -1,4 +1,4 @@
-"""A class for handling Nodes with 3D Cartesian Coordinates"""
+"""A class for handling Nodes described by 3D Cartesian Coordinates"""
 import numpy as np
 ###############################
 #           NODE CLASS        #
@@ -6,9 +6,19 @@ import numpy as np
 
 class Node:
     """
-    A class for handling Nodes with 3D Cartesian Coordinates
+    A class for handling Nodes described by 3D Cartesian Coordinates
     """
     def __init__(self, x, y, z):
+        """
+        Initializes instance of Node class with coordinates x, y, z
+        
+        Parameters
+        ----------
+        
+            x: float or int
+            y: float or int
+            z: float or int
+        """
         self.__vec = np.array([np.float64(x), np.float64(y), np.float64(z)])
 
     def get(self):
@@ -89,10 +99,6 @@ def nodeEq(Node1, Node2):
     
         Node1: cspath.Node
         Node2: cspath.Node
-    
-    Returns
-    -------
-        True/False
     """
     a = Node1.get()
     b = Node2.get()
@@ -109,13 +115,7 @@ def nodeInList(Node1, nodeList):
     ----------
     
         Node1: cspath.Node
-        nodeList: numpy.array
-        
-    Returns
-    -------
-    
-        True/False
-    
+        nodeList: numpy.array of cspath.Node instances
     """
     for i in np.arange(len(nodeList)):
 
