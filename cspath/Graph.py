@@ -962,7 +962,7 @@ class Graph:
 ####### Get In Degree of Node. If negIntr is set to True, we consider
 ####### negative values of the distance matrix as neighbors with negative weight.
     def get_idegree(self, node, negIntr = False):
-         """
+        """
          Get In Degree of Node. If negIntr is set to True, we consider
          negative real values of the distance matrix as neighbors with negative weight.
          
