@@ -1,4 +1,4 @@
-"""A class for handling Nodes described by 3D Cartesian Coordinates"""
+"""A class for handling Nodes described by 3D Cartesian Coordinates. Not to be used by the user."""
 import numpy as np
 ###############################
 #           NODE CLASS        #
