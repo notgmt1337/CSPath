@@ -15,10 +15,12 @@ Installing CSPath
 ----------------------
 Version 1.0.0 is not available for installation via pip, anaconda or others. Thus, the only way to install CSPath 1.0.0 is to download the source from GitHub (https://github.com/notgmt1337/CSPath) to your system.
 
-Example Code
-------------
 
-In these examples, we will demonstrate the core functionality of CSPath. 
+Examples
+--------
+Two examples demonstrating the core functionality of CSPath are provided.
+
+
 
 
 .. _bibliography: https://cspath.readthedocs.io/en/latest/reference/bibliography.html
