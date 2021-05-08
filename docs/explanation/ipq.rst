@@ -1,7 +1,7 @@
 Indexed Priority Queue
 ======================
 
-For a detailed explanation of IPQs, please visit https://mkhoshpa.github.io/IndexedPQ/.
+For a detailed explanation of IPQs, please visit https://en.wikipedia.org/wiki/Priority_queue.
 
 CSPath makes extensive use of indexed priority queues, or IPQs for short. The motivation for using IPQs is to significantly lower the program runtime. In version 1.0.0, IPQs are used in functions :code:`cspath.Graph.ipq_dijkstra, cspath.Graph.ipq_dijkstra_all`. To see how the use of IPQs speeds up the program, we need to consider two pieces of code: `one`_, `two`_. This explanation relies heavily on `Dijkstra's`_ algorithm.
 
