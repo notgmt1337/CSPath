@@ -953,7 +953,7 @@ class Graph:
         """
         deg = 0
         for i in np.arange(len(self.__distMatrix)):
-            if self.__distMatrix[node][i] > 0:
+            if self.__distMatrix[node][i] > 0 and self.__distMatrix[node][i] != np.inf:
                 deg += 1
             if negIntr:
                 if self.__distMatrix[node][i] < 0 and self.__distMatrix[node][i] != -np.inf:
@@ -978,7 +978,7 @@ class Graph:
         """
         deg = 0
         for i in np.arange(len(self.__distMatrix)):
-            if self.__distMatrix[i][node] > 0:
+            if self.__distMatrix[i][node] > 0 and self.__distMatrix[i][node] != np.inf:
                 deg += 1
             if negIntr:
                 if self.__distMatrix[i][node] < 0 and self.__distMatrix[i][node] != -np.inf:
@@ -1005,7 +1005,7 @@ class Graph:
         oneighs = np.array([], dtype = np.uint64)
 
         for i in np.arange(len(self.__distMatrix)):
-            if self.__distMatrix[node][i] > 0:
+            if self.__distMatrix[node][i] > 0 and self.__distMatrix[node][i] != np.inf:
                 oneighs  = np.append(oneighs, i)
             if negIntr:
                 if self.__distMatrix[node][i] < 0 and self.__distMatrix[node][i] != -np.inf:
@@ -1033,7 +1033,7 @@ class Graph:
         oneighs = np.array([], dtype = np.uint64)
 
         for i in np.arange(len(self.__distMatrix)):
-            if self.__distMatrix[i][node] > 0:
+            if self.__distMatrix[i][node] > 0 and self.__distMatrix[i][node] != np.inf:
                 oneighs  = np.append(oneighs, i)
             if negIntr:
                 if self.__distMatrix[i][node] < 0 and self.__distMatrix[i][node] != -np.inf:
