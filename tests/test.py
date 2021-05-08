@@ -3,6 +3,24 @@ import cspath as csp
 
 
 """
+Graph taken from: http://people.brunel.ac.uk/~mastjjb/jeb/or/gt91.gif
+
+The shortest path from A to G is (A, C, E, G) = (0, 2, 4, 6)
+Shortest path length = 8
+
+"""
+
+tMatrix = np.array([
+      [     0,      5,      1,      3, np.inf, np.inf, np.inf],
+      [     5,      0, np.inf,      4, np.inf,      6, np.inf],
+      [     1, np.inf,      0,      2,      3, np.inf, np.inf],
+      [     3,      4,      2,      0,      7,      9, np.inf],
+      [np.inf, np.inf,      3,      7,      0, np.inf,      4],
+      [np.inf,      6, np.inf,      9, np.inf,      0,      5],
+      [np.inf, np.inf, np.inf, np.inf,      4,      5,      0]
+])
+
+"""
 For explanations about each of these methods that are tested, please visit
 https://cspath.readthedocs.io/en/latest/reference/source.html
 """
@@ -55,7 +73,17 @@ def test_IsValidDistanceMatrix():
       assert not g.IsValidDistanceMatrix(dm5)
 
 def test_a_star():
-      pass
+
+      """
+      This code tests function cspath.Graph.Graph.a_star
+      """
+      
+      g = csp.Graph(tMatrix)      
+
+      result = g.a_star()
+
+      assert np.array_equal(result[0], np.array([0, 2, 4, 6]))
+      assert result[1] == 8
 
 def test_addNode():
       
@@ -73,10 +101,33 @@ def test_addNode():
       assert np.array_equal(g.getNodeList(), np.array([n1, n2]))
 
 def test_bellman_ford():
-      pass
+
+      """
+      This code tests function cspath.Graph.Graph.bellman_ford
+      """
+
+      g = csp.Graph(tMatrix)      
+
+      result = g.bellman_ford()
+
+      assert np.array_equal(result[0], np.array([0, 2, 4, 6]))
+      assert result[1] == 8
+
 
 def test_bellman_ford_all():
-      pass
+
+      """
+      This code tests function cspath.Graph.Graph.bellman_ford_all
+      """
+      
+      g = csp.Graph(tMatrix)      
+
+      result = g.bellman_ford_all()
+
+      assert np.array_equal(result[0], np.array([0, 5, 1, 3, 4, 11, 8]))
+      assert np.array_equal(result[1], np.array([0, 0, 0, 0, 2, 1, 4]))
+      assert np.array_equal(result[2], np.array([0, 2, 4, 6]))
+      assert result[3] == 8
 
 def test_changeNode():
       
@@ -141,13 +192,41 @@ def test_delLink():
 
 
 def test_dijkstra():
-      pass
+
+      """
+      This code tests function cspath.Graph.Graph.dijkstra
+      """
+
+      g = csp.Graph(tMatrix)      
+
+      result = g.dijkstra()
+
+      assert np.array_equal(result[0], np.array([0, 2, 4, 6]))
+      assert result[1] == 8
 
 def test_dijkstra_all():
-      pass
+      
+      """
+      This code tests function cspath.Graph.Graph.dijkstra_all
+      """
+      
+      g = csp.Graph(tMatrix)      
+
+      result = g.dijkstra_all()
+
+      assert np.array_equal(result[0], np.array([0, 5, 1, 3, 4, 11, 8]))
+      assert np.array_equal(result[1], np.array([0, 0, 0, 0, 2, 1, 4]))
+      assert np.array_equal(result[2], np.array([0, 2, 4, 6]))
+      assert result[3] == 8
 
 def test_floyd_warshall():
-      pass
+
+      g = csp.Graph(tMatrix)      
+
+      result = g.floyd_warshall()
+
+      assert np.array_equal(result[0], np.array([0, 2, 4, 6]))
+      assert result[1] == 8 
 
 def test_get3DMode():
       
@@ -223,22 +302,118 @@ def test_getNodeList():
       assert np.array_equal(g.getNodeList(), np.array([[100, 200, 300], [500, 500, 500]]))
 
 def test_get_idegree():
-      pass
+
+      """
+      This code tests function cspath.Graph.Graph.get_idegree
+      """
+
+      mtrx = np.array([
+            [     0, np.inf,      1,      3, np.inf, np.inf, np.inf],
+            [     5,      0, np.inf,      4, np.inf,      6, np.inf],
+            [     1, np.inf,      0,      2,      3, np.inf, np.inf],
+            [     3,      4,      2,      0,      7,      9, np.inf],
+            [np.inf, np.inf,      3,      7,      0, np.inf,      4],
+            [np.inf,      6, np.inf,      9, np.inf,      0,      5],
+            [np.inf, np.inf, np.inf, np.inf,      4,      5,      0]
+      ])
+
+      g = csp.Graph(mtrx)
+
+      assert g.get_idegree(0) == 3
+      assert g.get_idegree(3) == 5
+
 
 def test_get_ineighbors():
-      pass
+      
+      """
+      This code tests function cspath.Graph.Graph.get_ineighbors
+      """
+
+      mtrx = np.array([
+            [     0, np.inf,      1,      3, np.inf, np.inf, np.inf],
+            [     5,      0, np.inf,      4, np.inf,      6, np.inf],
+            [     1, np.inf,      0,      2,      3, np.inf, np.inf],
+            [     3,      4,      2,      0,      7,      9, np.inf],
+            [np.inf, np.inf,      3,      7,      0, np.inf,      4],
+            [np.inf,      6, np.inf,      9, np.inf,      0,      5],
+            [np.inf, np.inf, np.inf, np.inf,      4,      5,      0]
+      ])
+
+      g = csp.Graph(mtrx)
+
+      assert np.array_equal(g.get_ineighbors(0), np.array([1, 2, 3]))
+      assert np.array_equal(g.get_ineighbors(1), np.array([3, 5]))
 
 def test_get_odegree():
-      pass
+
+      """
+      This code tests function cspath.Graph.Graph.get_odegree
+      """
+
+      mtrx = np.array([
+            [     0, np.inf,      1,      3, np.inf, np.inf, np.inf],
+            [     5,      0, np.inf,      4, np.inf,      6, np.inf],
+            [     1, np.inf,      0,      2,      3, np.inf, np.inf],
+            [     3,      4,      2,      0,      7,      9, np.inf],
+            [np.inf, np.inf,      3,      7,      0, np.inf,      4],
+            [np.inf,      6, np.inf,      9, np.inf,      0,      5],
+            [np.inf, np.inf, np.inf, np.inf,      4,      5,      0]
+      ])
+
+      g = csp.Graph(mtrx)
+
+      assert g.get_odegree(0) == 2
+      assert g.get_odegree(4) == 3
 
 def test_get_oneighbors():
-      pass
+
+      """
+      This code tests function cspath.Graph.Graph.get_ineighbors
+      """
+
+      mtrx = np.array([
+            [     0, np.inf,      1,      3, np.inf, np.inf, np.inf],
+            [     5,      0, np.inf,      4, np.inf,      6, np.inf],
+            [     1, np.inf,      0,      2,      3, np.inf, np.inf],
+            [     3,      4,      2,      0,      7,      9, np.inf],
+            [np.inf, np.inf,      3,      7,      0, np.inf,      4],
+            [np.inf,      6, np.inf,      9, np.inf,      0,      5],
+            [np.inf, np.inf, np.inf, np.inf,      4,      5,      0]
+      ])
+
+      g = csp.Graph(mtrx)
+
+      assert np.array_equal(g.get_oneighbors(0), np.array([2, 3]))
+      assert np.array_equal(g.get_oneighbors(1), np.array([0, 3, 5]))
+
 
 def test_ipq_dijkstra():
-      pass
+
+      """
+      This code tests function cspath.Graph.Graph.ipq_dijkstra
+      """
+
+      g = csp.Graph(tMatrix)      
+
+      result = g.ipq_dijkstra()
+
+      assert np.array_equal(result[0], np.array([0, 2, 4, 6]))
+      assert result[1] == 8
 
 def test_ipq_dijkstra_all():
-      pass
+   
+      """
+      This code tests function cspath.Graph.Graph.ipq_dijkstra_all
+      """
+      
+      g = csp.Graph(tMatrix)      
+
+      result = g.ipq_dijkstra_all()
+
+      assert np.array_equal(result[0], np.array([0, 5, 1, 3, 4, 11, 8]))
+      assert np.array_equal(result[1], np.array([0, 0, 0, 0, 2, 1, 4]))
+      assert np.array_equal(result[2], np.array([0, 2, 4, 6]))
+      assert result[3] == 8 
 
 def test_linkNodes():
       
@@ -436,6 +611,20 @@ def test_nodeInList():
       assert not csp.nodeInList(n3, nList)
 
 
+
+
+test_get_idegree()
+test_get_ineighbors()
+test_get_odegree()
+test_get_oneighbors()
+test_ipq_dijkstra_all()
+test_bellman_ford_all()
+test_dijkstra_all()
+test_ipq_dijkstra()
+test_floyd_warshall()
+test_dijkstra()
+test_bellman_ford()
+test_a_star()
 test_IsValidDistanceMatrix()
 test_getDistanceMatrix()
 test_getCoordinateMode()
