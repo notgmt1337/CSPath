@@ -620,7 +620,8 @@ class Graph:
                 
                 if index == numNodes - 1:
                     break
-
+            prev[0] = 0
+            
             end = time()
 
             if shr[numNodes - 1] == np.inf:
