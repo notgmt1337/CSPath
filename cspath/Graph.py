@@ -4,7 +4,7 @@
 #########################
 import numpy as np
 from time import time
-import Node as nd
+from . import Node as nd
 ######################################
 #            GRAPH CLASS             #
 ######################################
