@@ -64,6 +64,8 @@ Step 3
 The final step is negative cycle detection. Basically, if there is a cycle such that after you follow it your collective cost is less than when you started following it, then you could repeat this infinitely many times to make your total cost infinitely small. This cannot be allowed. So, we need to do negative cycle detection, which determines whether somewhere in the graph, there exists such a negative cycle.
 
 
+There are two implementations of the Bellman-Ford algorithm in CSPath: :code:`cspath.graph.bellman_ford` and :code:`cspath.graph.bellman_ford_all`. 
+
 .. _Dijkstra's: https://cspath.readthedocs.io/en/latest/explanation/dijkstra.html
 
 
